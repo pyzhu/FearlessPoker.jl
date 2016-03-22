@@ -1,7 +1,7 @@
 type Hand
   cards::Array{AbstractString}
 
-  function Hand{T<:AbstractString}(h::Array{T})
+  function Hand(h::Array)
     @assert length(unique(h)) == length(h) """a hand cannot contain duplicate cards"""
     @assert length(setdiff(h, DECK)) == 0 """hand contains invalid cards"""
     return orderhand!(new(h))

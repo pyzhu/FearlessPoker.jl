@@ -4,6 +4,8 @@ using StatsBase
 
 facts("Hand Parsing") do
   @fact Hand(13757003685786313) --> Hand("8d,Tc,Td,Th,Ts,Qh,Qs")
+  @fact Hand(405331374) --> Hand("2c,2d,2s,3h,4s,6h,Td")
+  @fact Hand(8039256302) --> Hand("2c,2s,3c,5c,6s,7d,Tc")
   @fact Hand(690690) --> Hand("2c,2d,2h,2s,3c,3d,4c")
 end
 
@@ -22,6 +24,8 @@ facts("Hand evaluation") do
   @fact evaluate(Hand("7s,Kc,4d,5c,8s,Jd,9s")) --> 113.11090807
   @fact evaluate(Hand("Qh,9h,4d,9c,Td,Jc,3d")) --> 209.121110
   @fact evaluate(Hand("2c,2d,5s,6h,Qc,Qs,Ad")) --> 312.0214
+  @fact evaluate(Hand("2c,2d,2s,3h,4s,6h,Td")) --> 402.1006
+  @fact evaluate(Hand("2c,2s,3c,5c,6s,7d,Tc")) --> 202.100706
 end
 
 facts("Evaluate Straights") do

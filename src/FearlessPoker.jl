@@ -1,5 +1,5 @@
 module FearlessPoker
-using FearlessSQL, StatsBase
+using FearlessSQL, StatsBase, Memoize
 
 # types to export
 export Hand
@@ -7,7 +7,7 @@ export Hand
 export RANKS, SUITS, DECK, STARTING_HANDS
 
 # functions to export
-export evaluate
+export evaluate, equity
 
 
 # package code goes here

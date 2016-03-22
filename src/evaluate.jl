@@ -56,8 +56,12 @@ function findflush(hand::Hand)
   return Hand(filter(c -> last(c) == flush_suit, hand.cards))
 end
 
+@memoize function evaluate(hand::Integer)
+  return evaluate(Hand(hand))
+end
+
 function evaluate(hand::Hand)
-  @assert length(hand.cards) == 7 """hands must contain 2 hole cards and 5 community cards"""
+  # @assert length(hand.cards) == 7 """hands must contain 2 hole cards and 5 community cards"""
 
   # 900-999 straight flush
   # 800-899 quads
